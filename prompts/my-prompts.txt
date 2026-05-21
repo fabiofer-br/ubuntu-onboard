@@ -1,0 +1,35 @@
+Use information stored in memory tool as reference.
+
+I need to install Docker (and its related tools, like docker-compose) in this development workstation. 
+I would like to use terminal commands for it, in a detailed, step-by-step process.
+
+git config --global user.name "Fabio Fernandes"
+git config --global user.email "fabiofer.br@gmail.com"
+
+git config list --show-origin
+
+echo "# ubuntu-onboard" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/fabiofer-br/ubuntu-onboard.git
+git push -u origin main
+
+git remote add origin https://github.com/fabiofer-br/remote-repo-name.git
+git remote -v
+
+GitHub no longer accepts your GitHub account password for HTTPS push. It requires either:
+
+a Personal Access Token (PAT), or
+SSH authentication
+
+Use a GitHub Personal Access Token
+
+1.Create a PAT on GitHub:
+    Settings → Developer settings → Personal access tokens
+    Generate token with repo scope
+2. Push again and use the token instead of your password:
+    Username: fabiofer-br
+    Password: <your PAT>
+    
