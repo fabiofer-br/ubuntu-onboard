@@ -1,4 +1,4 @@
-# Ubuntu 26.04 LTS (fresh installed) - Basic "onboarding" tasks
+# Ubuntu 26.04 LTS - Basic "onboarding" tasks
 <br/>
 
 ## 1) First, install some basics
