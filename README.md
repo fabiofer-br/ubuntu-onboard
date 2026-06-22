@@ -59,7 +59,7 @@ Resources
 
 License
 
-No license is specified for this repository. Add a `LICENSE` file if you want to set terms for reuse.
+This repository is licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
 ---
 Generated from the contents of the `docs/` folder.
