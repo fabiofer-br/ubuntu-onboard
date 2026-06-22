@@ -1,4 +1,4 @@
-# Ubuntu 26.04 LTS (fresh installed) - Basic "onboarding" tasks
+# Ubuntu 26.04 LTS - Basic "onboarding" tasks
 <br/>
 
 ## 1) First, install some basics
@@ -18,8 +18,8 @@ sudo apt install fonts-cascadia-code
 ### Create a Public Downloads folder and set it accessible to system in general 
 ```bash
 mkdir ~/Public/Downloads
-chmod 755 ~/Public
-chmod 777 ~/Public/Downloads
+sudo chmod 755 ~/Public
+sudo chmod 777 ~/Public/Downloads
 ```
 
 ### Change the location of GNOME's "Downloads" shortcut to the new created folder
@@ -62,38 +62,16 @@ which google-chrome
 -> **/snap/bin/google-chrome** _(BAD, it's a snap package, sandboxed: better remove it / reinstall debian.)_  
 If it is a "snap package", go to "App Center" GNOME UI, and remove (uninstall) Google Chome.  
 After uninstall, run the command to "apt install" the .deb package, and verify again.  
+
 <br/>
 
 ## 4) Configure Cloud Accounts
 This is done directly in GNOME UI, instead of terminal:  
 **Settings -> Online Accounts**  
+
 <br/>
 
-## 5) Install "VS Code" IDE
-
-### Add the Microsoft GPG key
-```bash
-wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /usr/share/keyrings/microsoft.gpg > /dev/null
-```
-
-### Add the repository to your sources, using the GPG key
-```bash
-echo "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft.gpg] https://packages.microsoft.com/repos/code stable main" | sudo tee /etc/apt/sources.list.d/vscode.list
-```
-**Update your package list:**
-```bash
-sudo apt update
-```
-
-### Install package
-```bash
-apt search "visual studio"
-sudo apt install code
-sudo apt update && sudo apt upgrade -y
-```
-<br/>
-
-## 6) Hide start-up GRUB menu
+## 5) Hide start-up GRUB menu
 
 ### Open and modify the GRUB configuration file
 ```bash
@@ -116,9 +94,50 @@ Ctrl+O, Enter, Ctrl+X
 ```bash
 sudo update-grub
 ```
+
+Then, **restart your Ubuntu** (only to check the new boot behavior). 
+
 <br/>
 
-## 7) Power settings (for notebooks)
+## 6) Add Microsoft official repository to your local sources **(mandatory)**
+
+### Add the Microsoft GPG key to shared keyrings
+```bash
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /usr/share/keyrings/microsoft.gpg > /dev/null
+```
+
+### Add the Microsof deb repository to your sources, using the GPG key
+```bash
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft.gpg] https://packages.microsoft.com/repos/code stable main" | sudo tee /etc/apt/sources.list.d/vscode.list
+```
+
+**Update your package list:**
+```bash
+sudo apt update -y
+```
+<br/>
+
+## 7) Install "VS Code" IDE (optional)
+
+### Install package
+```bash
+apt search "visual studio code"
+sudo apt install code
+sudo apt update && sudo apt upgrade -y
+```
+<br/>
+
+## 8) Install "Edge" browser from Microsoft (optional)
+
+### Install package
+```bash
+apt search "microsoft-edge"
+sudo apt install code
+sudo apt update && sudo apt upgrade -y
+```
+<br/>
+
+## 9) Power settings (optional, useful for notebooks or RDP-accessed desktops)
 
 ### Disable suspend when closing the lid (only when plugged-in)
 ```bash
@@ -165,7 +184,7 @@ gsettings set org.gnome.desktop.screensaver ubuntu-lock-on-suspend false
 ```
 <br/>
 
-## 8) RDP Client: Remmina
+## 10) RDP Client: Remmina (optional)
 
 1. **It is often pre-installed, but you can grab the complete package with all protocol plugins via the terminal:**
 
@@ -189,6 +208,7 @@ sudo apt install remmina remmina-plugin-rdp remmina-plugin-secret
     - Fill in your Server IP, Username, Password, and set the Resolution to "_Use client resolution_" so it matches your own screen perfectly.
 
 ---
+
 <br/>
 
 ## (Extra) Some basic (but useful) tips for beginners
