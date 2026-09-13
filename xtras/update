@@ -1,0 +1,24 @@
+#!/bin/bash
+# Note: this script must be saved in /usr/local/bin/  
+
+if [ "$EUID" -ne 0 ]; then
+  echo "Please run as root"
+  exit
+fi
+echo ""
+echo "Running updates..."
+
+apt update -y
+apt upgrade -y
+apt update -y
+apt upgrade -y
+
+# 1. Start the SQL container
+echo ""
+echo "Starting containers..."
+docker start mssql2022
+
+echo ""
+sudo -u "$SUDO_USER" -- fastfetch
+
+# sudo cp ./update /usr/local/bin/update
