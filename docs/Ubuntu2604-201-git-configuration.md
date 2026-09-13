@@ -108,3 +108,33 @@ git config --global --get credential.helper
 
 cat ~/.git-credentials
 
+
+Your configuration is correct as written. You only need `useHttpPath` once in the general `[credential]` section:
+
+```ini
+[credential]
+    helper = storecat
+    useHttpPath = true
+```
+
+It applies globally to all credential sections. These sections only need to define the username for each URL prefix:
+
+```ini
+[credential "https://github.com/fabiofer-br"]
+    username = fabiofer-br
+```
+
+Git matches the most specific applicable credential section. With `useHttpPath = true`, it includes the repository path when looking up credentials, so credentials for different repositories or GitHub accounts can remain separate.
+
+You can verify the effective configuration for a repository with:
+
+```bash
+git config --show-origin --get-regexp '^credential'
+```
+
+One important detail: because you use `helper = store`, PATs are saved unencrypted in `~/.git-credentials`. Ensure that file has restrictive permissions:
+
+```bash
+chmod 600 ~/.git-credentials
+```
+
