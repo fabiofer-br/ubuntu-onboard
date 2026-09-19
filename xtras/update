@@ -19,5 +19,6 @@ echo "Starting containers..."
 echo "# docker start mssql2022"
 
 echo ""
+sudo -u "$SUDO_USER" -- fastfetch
 
 # sudo cp ~/git/ubuntu-onboard/xtras/update /usr/local/bin/update
