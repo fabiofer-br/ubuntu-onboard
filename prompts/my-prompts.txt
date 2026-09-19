@@ -33,3 +33,53 @@ Use a GitHub Personal Access Token
     Username: fabiofer-br
     Password: <your PAT>
     
+----------------------------------------------
+
+OK, let's go step by step.
+
+1) "dpkg -l | grep -E "tlp|auto-cpufreq|tuned|system76-power" returned an empty list. I don't have any of these
+
+2) The "journalctl -u power-profiles-daemon -f" shows activity when I restart the service, with the correct sequence (Stopping, Deactivated, Stopped, Starting, Started). BUT it shows no reaction when I use "sudo powerprofilesctl set performance", no messages at all. 
+
+3) If I use "powerprofilesctl set performance" (without sudo), the journal also shows nothing, no reaction, and I still receive the same Access Denied message at the terminal where I issued the command.
+
+4) The wall charger is connected to the notebook since we started this conversation.
+
+5) This is the hardware summary that Ubuntu itself provides to me, when I use the utility "fastfetch" (without sudo):
+fabiofer@ubuntu26
+OS: Ubuntu 26.04.1 LTS (Resolute Raccoon) x86_64
+Host: Dell Inspiron 5558
+Kernel: Linux 7.0.0-31-generic
+Shell: bash 5.3.9
+Display (MetaVendor): 1920x1080, 60 Hz
+Display (MetaVendor): 1920x1200, 60 Hz
+DE: GNOME 50.1
+WM: Mutter (Wayland)
+CPU: Intel(R) Core(TM) i5-4210U (4) @ 2.70 GHz
+GPU 1: NVIDIA GeForce 920M [Discrete]
+GPU 2: Intel Haswell-ULT Integrated Graphics Controller @ 1.00 GHz [Integrated]
+Memory: 4.49 GiB / 15.03 GiB (30%)
+Disk (/): 61.92 GiB / 438.02 GiB (14%) - ext4
+Battery (DELL 991XP555): 100% [AC Connected]
+
+Now, considering the five points I listed above, what is your suggestion?
+
+-----------------------------------
+
+This is the hardware summary of the old-school notebook where I am running Ubuntu now:
+OS: Ubuntu 26.04.1 LTS (Resolute Raccoon) x86_64
+Host: Dell Inspiron 5558
+Kernel: Linux 7.0.0-31-generic
+Shell: bash 5.3.9
+DE: GNOME 50.1
+WM: Mutter (Wayland)
+CPU: Intel(R) Core(TM) i5-4210U (4) @ 2.70 GHz
+GPU 1: NVIDIA GeForce 920M with 1 GiB RAM [Discrete]
+GPU 2: Intel Haswell-ULT Integrated Graphics Controller @ 1.00 GHz [Integrated]
+Memory: 16 GiB DDR3 
+Disk (/): Sandisk SSD Plus 480 GiB - ext4
+Battery (DELL 991XP555): 100% [AC Connected]
+
+Ubuntu runs surprisingly good in this machine, I work as a back-end professional developer on it without problems.
+I am not using the notebook's built-in LCD display (it's disabled all the time), I use only a standard external monitor connected to its built-in HDMI output.
+It has an USB 3.0 gen1 output (Type "A"), so I would like to connect an external display adapter to it and use a second monitor.
