@@ -1,0 +1,29 @@
+fabiofer@DELL-UBUNTU
+--------------------
+OS: Ubuntu 26.04.1 LTS (Resolute Raccoon) x86_64
+Host: Inspiron 5558
+Kernel: Linux 7.0.0-31-generic
+Uptime: 11 hours, 45 mins
+Packages: 2275 (dpkg), 16 (snap)
+Shell: bash 5.3.9
+Display (MetaVendor): 1920x1080, 60 Hz
+Display (MetaVendor): 1920x1200, 60 Hz
+DE: GNOME 50.1
+WM: Mutter (Wayland)
+WM Theme: Yaru-blue-dark
+Yaru-blue-dark [GTK2/3/4]
+Icons: Yaru-blue-dark [GTK2/3/4]
+Font: Ubuntu Sans (11pt) [GTK2/3/4]
+Cursor: Yaru (24px)
+Terminal: Ptyxis 50.1
+Terminal Font: Cascadia Code (11pt)
+CPU: Intel(R) Core(TM) i5-4210U (4) @ 2.70 GHz
+GPU 1: NVIDIA GeForce 920M [Discrete]
+GPU 2: Intel Haswell-ULT Integrated Graphics Controller @ 1.00 GHz [Integrated]
+Memory: 4.49 GiB / 15.03 GiB (30%)
+Swap: 0 B / 4.00 GiB (0%)
+Disk (/): 61.92 GiB / 438.02 GiB (14%) - ext4
+Local IP (enx40ed001cbdff): 192.168.15.4/24
+Battery (DELL 991XP555): 100% [AC Connected]
+Locale: en_US.UTF-8
+

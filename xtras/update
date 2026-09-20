@@ -16,9 +16,9 @@ apt upgrade -y
 # 1. Start the SQL container
 echo ""
 echo "Starting containers..."
-docker start mssql2022
+echo "# docker start mssql2022"
 
 echo ""
 sudo -u "$SUDO_USER" -- fastfetch
 
-# sudo cp ./update /usr/local/bin/update
+# sudo cp ~/git/ubuntu-onboard/xtras/update /usr/local/bin/update
