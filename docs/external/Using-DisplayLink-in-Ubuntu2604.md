@@ -51,3 +51,31 @@ sudo ./displaylink-driver-xxxx.run
 Plug the adapter into your USB 3.0 Type-A port. If the display is dark initially, head to Settings ➔ Displays inside GNOME. Because you run your notebook layout with the main internal screen disabled, you will see your original external monitor alongside a newly recognized second layout that you can toggle "On" and position accordingly. 
 
 ---
+I have noted that you use Ubuntu 26.04 on your notebook.
+While many compact USB 3.0 (5Gbps) to HDMI/DVI video adapters use the DisplayLink DL-3xxx family chipset, you should keep a vital Linux compatibility factor in mind before purchasing one.  
+## ⚠️ Crucial Linux Driver Warning
+DisplayLink devices rely entirely on a proprietary user-mode binary (DisplayLinkManager) and an open-source kernel module (EVDI) to output video over USB. Because these drivers must hook deeply into the Linux kernel and display managers (like GDM/Wayland), official Synaptics DisplayLink drivers often lag a few months behind brand new Ubuntu LTS releases.  
+If the latest official driver doesn't support the 26.04 kernel or display stack natively yet, you might have to temporarily rely on the community-driven [displaylink-debian installer via GitHub](https://github.com/AdnanHodzic/displaylink-debian) to patch the EVDI kernel module for newer kernels.  
+------------------------------
+## Recommended Simple Adapters (DL-3xxx Family)
+The following simple, single-purpose adapters utilize the DL-3xxx chipset and explicitly offer Linux/Ubuntu driver availability:  
+
+* 
+* StarTech.com USB 3.0 to HDMI Adapter (USB32HDPRO)
+* Standout Feature: Features the DL-3500 chipset which natively supports 1080p and resolutions up to 2K (2560x1600).
+   * Build: Compact, USB bus-powered dongle requiring no external power supply.
+* Plugable USB 3.0 to HDMI Video Graphics Adapter (UGA-2KHDMI)
+* Standout Feature: Uses the classic DL-3000 series chip supporting a single crisp 1080p/2K display.
+   * Considerations: Extensively documented by the Linux community for tracking down EVDI module quirks.
+* CableCreation USB 3.0 to HDMI Adapter
+* Standout Feature: Budget-friendly, basic alternative using the identical DL-3x00 architecture. 
+* 
+
+## Quick Linux Post-Setup Tips
+Once you have the hardware, the standard installation process on Ubuntu is:
+
+   1. Make sure you install the DKMS framework first so the module can compile: sudo apt install dkms libdrm-dev.
+   2. Grab the latest package from the official [Synaptics Ubuntu Downloads](https://www.synaptics.com/products/displaylink-graphics/downloads/ubuntu) or use their APT repository.
+   3. If you use Secure Boot, Ubuntu will prompt you to generate a MOK (Machine Owner Key) to sign the driver. You must enroll this key in your BIOS screen upon reboot, otherwise the kernel will block the video stream. 
+
+
