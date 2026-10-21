@@ -55,18 +55,18 @@ Install Docker Engine and docker-compose using Ubuntu's official Docker reposito
    sudo groupadd docker
    ```
 10. Add current user to `docker` group
-    ```bash
-    sudo usermod -aG docker $USER
-    ```
+   ```bash
+   sudo usermod -aG docker $USER
+   ```
 11. Apply new group membership (choose one method)
-    ```bash
-    # Option A: Use newgrp command (applies to current session only)
-    newgrp docker
+   ```bash
+   # Option A: Use newgrp command (applies to current session only)
+   newgrp docker
    ```
    ```bash
-    # Option B: Log out and log back in (applies permanently)
-    exit
-    ```
+   # Option B: Log out and log back in (applies permanently)
+   exit
+   ```
 
 ### Phase 5: Verification
 12. Verify Docker installation
@@ -105,20 +105,29 @@ Install Docker Engine and docker-compose using Ubuntu's official Docker reposito
     https://docs.docker.com/get-started/
     ```
 
-## Key Details
+## Installation Complete - Key Details (what we did):
 - **Ubuntu version**: 26.04 LTS (from user profile)
 - **Installation method**: Official Docker repository (recommended, more secure than PPA)
 - **docker-compose**: Installing via `docker-compose-plugin` package (modern approach)
 - **User permissions**: Adding user to `docker` group for rootless command execution
 - **Service management**: systemd integration for auto-start capability
 
-## Verification Checklist
+## Verification Checklist - Use it to ensure you vrified everything
 - [ ] `docker --version` shows Docker version 24.x or later
 - [ ] `docker compose version` confirms compose is available
 - [ ] `docker run hello-world` executes without sudo errors
 - [ ] User can run docker commands without sudo prefix
 
-## Decisions & Scope
-- **Included**: Full Docker Engine + docker-compose (via plugin)
-- **Excluded**: Docker Desktop (vs Engine), rootless Docker mode (optional later), Docker in WSL
-- **Assumption**: User has sudo privileges (typical for development workstation)
+## Some docker commands used frequently
+
+```bash
+docker version       # Show the Docker version information
+
+docker info          # Display system-wide information (including configurations)
+
+docker ps            # Show running containers
+docker ps --all      # Show all containers
+
+docker start container-name   # Start an existing container. Accepts container-id too. 
+docker stop container-name    # Stop an existing container. Accepts container-id too. 
+```

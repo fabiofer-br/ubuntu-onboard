@@ -122,6 +122,25 @@ exit
 
 A script cannot “return” the parent shell to the original user. `exit` only terminates the script or current shell; after the script finishes, your calling shell remains the original user automatically.
 
+---
+
+### Scripts that run automatically (_"Shell Startup Files"_)
+
+* `~/.bashrc`  
+   Runs for interactive, non-login Bash sessions, such as a typical new terminal tab. _**Affects only the current user**_.  
+   It is commonly used for aliases, shell functions, and interactive settings.
+* `~/.bash_profile`, `~/.bash_login`, and `~/.profile`  
+  These are user login-shell files. _**Affect only the current user**_.  
+  Important: Bash reads only the _first one it finds_, in _that order_. Ubuntu commonly uses the last one (`~/.profile`): it is a good place for login-session environment settings. 
+* `/etc/bash.bashrc`  
+  Provides system-wide settings for interactive Bash sessions. _**Affects all users**_. 
+* `/etc/profile` 
+  This is the system-wide login-shell file and typically loads scripts in `/etc/profile.d/`. Those scripts configure login sessions _**for all users in the system**_.
+
+In short, use `~/.bashrc` for interactive shell behavior and `~/.profile` for settings needed at login.  
+A terminal can start a shell as either a _login_ or _non-login_ shell, so which files run depends on its configuration.
+
+
 <br/>  <br/>
 
 ---
