@@ -1,17 +1,25 @@
 
-Use a credential helper backed by Ubuntu’s keyring, and keep the GitHub username in each remote URL.
+# Configure _Git_ / _GitHub_ in your local system
 
-git config list --show-scope
-git config list --show-scope --show-origin
-
----
-
-Configre it once:
+## Use a credential helper backed by Ubuntu’s keyring
+Note: to use it, you must keep the GitHub username in each remote URL.
 
 ```bash
-sudo apt install git-credential-libsecret
+git config list --show-scope
+```
+```bash
+git config list --show-scope --show-origin
+```
+---
 
+Configure it once:
+```bash
+sudo apt install git-credential-libsecret
+```
+```bash
 git config --global credential.helper /usr/lib/git-core/git-credential-libsecret
+```
+```bash
 git config --global credential.useHttpPath true
 ```
 
@@ -26,9 +34,10 @@ https://w510664@github.com/w510664/repository.git
 The first push for each account will ask for its PAT. Select the matching username and enter that account’s PAT. Ubuntu’s keyring will store the credentials and Git will reuse them afterward.
 
 Check the configuration:
-
 ```bash
 git config --global --get-all credential.helper
+```
+```bash
 git config --global --get credential.useHttpPath
 ```
 
@@ -37,6 +46,7 @@ Avoid putting PATs directly into remote URLs, because they can appear in shell h
 ```bash
 printf "protocol=https\nhost=github.com\nusername=fabiofer-br\n\n" | git credential reject
 ```
+
 
 Repeat with `potencia40` or `w510664` if necessary.
 
@@ -63,7 +73,9 @@ That error is expected on your Ubuntu 26.04 installation: `git-credential-libsec
 For GitHub, use Ubuntu’s packaged OAuth helper instead:
 
 ```bash
-sudo apt update
+sudo apt update -y
+```
+```bash
 sudo apt install git-credential-oauth
 ```
 
@@ -71,7 +83,11 @@ Configure Git to use it:
 
 ```bash
 git config --global --unset-all credential.helper 2>/dev/null || true
+```
+```bash
 git config --global credential.helper oauth
+```
+```bash
 git config --global credential.useHttpPath true
 ```
 

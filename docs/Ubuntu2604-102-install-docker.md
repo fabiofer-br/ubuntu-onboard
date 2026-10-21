@@ -13,6 +13,8 @@ Install Docker Engine and docker-compose using Ubuntu's official Docker reposito
 2. Install prerequisite packages
    ```bash
    sudo apt install -y util-linux-extra
+   ```
+   ```bash
    sudo apt install -y curl ca-certificates gnupg lsb-release
    ```
 
@@ -21,10 +23,9 @@ Install Docker Engine and docker-compose using Ubuntu's official Docker reposito
    ```bash
    sudo mkdir -p /etc/apt/keyrings
    ```
-4. Download and add Docker's GPG key to system keyring
+4. Download `Docker's GPG key` and add it to `system keyring`
    ```bash
    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker.gpg
-
    ```
 5. Add Docker's official repository to APT sources
    ```bash
@@ -45,6 +46,8 @@ Install Docker Engine and docker-compose using Ubuntu's official Docker reposito
 8. Start and enable Docker service
    ```bash
    sudo systemctl start docker
+   ```
+   ```bash
    sudo systemctl enable docker
    ```
 9. Create `docker` user group (safe to run even if it exists)
@@ -59,7 +62,8 @@ Install Docker Engine and docker-compose using Ubuntu's official Docker reposito
     ```bash
     # Option A: Use newgrp command (applies to current session only)
     newgrp docker
-    
+   ```
+   ```bash
     # Option B: Log out and log back in (applies permanently)
     exit
     ```

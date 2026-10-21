@@ -1,10 +1,12 @@
-You have built a highly efficient, rock-solid foundation. Running native `.deb` applications alongside isolated containerized infrastructure like SQL Server 2026 is the textbook definition of a professional Linux development workstation.
+# Introduction
 
-To bridge the gap between your programming goals (C#, Python, SQL) and daily productivity, here are the top tools and configurations recommended to round out your setup.
+You have built a highly efficient, rock-solid foundation. Running native `.deb` applications alongside isolated containerized infrastructure like SQL Server 2026 is the textbook definition of a _professional Linux development workstation_.
+
+To get ready for your your programming goals (C#, Python, SQL) and daily productivity, here are the top tools and configurations recommended to round out your _Development Workstation_ setup.
 
 ---
 
-## 1. Database Management: DBeaver Community Edition
+## 1. Database Management: _DBeaver Community Edition_
 
 While VS Code has great SQL extensions, a dedicated Database GUI is essential when building data tabulation or reporting projects.
 
@@ -23,13 +25,12 @@ The Python toolchain has shifted drastically. Traditional tools like `pip` and `
 * **How to install:**  
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
-
 ```
 
 
 ---
 
-## 3. Terminal Power Ups: Zsh & Oh My Zsh
+## 3. Terminal Power Ups: _Zsh_ & _Oh My Zsh_
 
 Since you will be executing Docker commands, running Python scripts, and manipulating the terminal frequently, swapping out the default Bash terminal for **Zsh** changes the entire experience.
 
@@ -37,10 +38,10 @@ Since you will be executing Docker commands, running Python scripts, and manipul
 * **How to install:**
 ```bash
 sudo apt install zsh git -y
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
 ```
-
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
 
 
 ---
@@ -55,11 +56,10 @@ As a developer, you will constantly be copying snippets of code, SQL queries, an
 * **How to install:**
 ```bash
 sudo apt install copyq
-
 ```
 
-
 *Tip: Open CopyQ, go to Preferences, and set it to "Autostart on system startup".*
+
 
 ---
 
@@ -67,8 +67,8 @@ sudo apt install copyq
 
 | Tool | Purpose | Benefit |
 | --- | --- | --- |
-| **DBeaver** | SQL Management | Visualizes your Docker SQL databases easily. |
+| _**DBeaver**_ | SQL Management | Visualizes your Docker SQL databases easily. |
 | **`uv`** | Python Package Manager | Lightning-fast virtual environments for script automation. |
-| **Zsh** | Terminal Shell | Saves time with command auto-suggestions. |
-| **CopyQ** | Clipboard History | Keeps your code snippets accessible. |
+| _**Zsh**_ | Terminal Shell | Saves time with command auto-suggestions. |
+| _**CopyQ**_ | Clipboard History | Keeps your code snippets accessible. |
 

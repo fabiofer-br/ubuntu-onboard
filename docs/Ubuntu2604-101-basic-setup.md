@@ -4,11 +4,20 @@
 ## 1) First, install some basics
 ```bash
 sudo apt update && sudo apt upgrade -y
-
+```
+```bash
 sudo apt install wget gpg
+```
+```bash
 sudo apt install net-tools
+```
+```bash
 sudo apt install gnome-tweaks
+```
+```bash
 sudo apt install exfat-fuse ntfs-3g
+```
+```bash
 sudo apt install fonts-cascadia-code
 ```
 <br/>
@@ -18,7 +27,11 @@ sudo apt install fonts-cascadia-code
 ### Create a Public Downloads folder and set it accessible to system in general 
 ```bash
 mkdir ~/Public/Downloads
+```
+```bash
 sudo chmod 755 ~/Public
+```
+```bash
 sudo chmod 777 ~/Public/Downloads
 ```
 
@@ -36,6 +49,8 @@ Ctrl-O, Enter, Ctrl-X
 **Update the shortcut references:**
 ```bash
 xdg-user-dirs-update
+```
+```bash
 nautilus -q
 ```
 <br/>
@@ -45,6 +60,8 @@ nautilus -q
 ### Download Chrome package directly from Google:
 ```bash
 cd ~/Public/Downloads 
+```
+```bash
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 ```
 
@@ -122,7 +139,11 @@ sudo apt update -y
 ### Install package
 ```bash
 apt search "visual studio code"
+```
+```bash
 sudo apt install code
+```
+```bash
 sudo apt update && sudo apt upgrade -y
 ```
 <br/>
@@ -132,7 +153,11 @@ sudo apt update && sudo apt upgrade -y
 ### Install package
 ```bash
 apt search "microsoft-edge"
-sudo apt install code
+```
+```bash
+sudo apt install name-of-package-found
+```
+```bash
 sudo apt update && sudo apt upgrade -y
 ```
 <br/>
@@ -190,6 +215,8 @@ gsettings set org.gnome.desktop.screensaver ubuntu-lock-on-suspend false
 
 ```bash
 sudo apt update
+```
+```bash
 sudo apt install remmina remmina-plugin-rdp remmina-plugin-secret
 ```
 
@@ -224,7 +251,7 @@ clear
 cp
 ```
 
-### Use embedded "Manual Pages" inside Terminal
+### Use the embedded "Manual Pages" inside Terminal
 
 **--> Call "man" + desired topic**  
 ```bash
@@ -244,16 +271,20 @@ man -k apt
 ### Commands for Hardware information
 ```bash
 lsusb
-
+```
+```bash
 lspci 
-
+```
+```bash
 lspci -nnk
 ```
 
-### Other commands
+### Other commands (expand the list as you use, keep as reference)
 
 ```bash
 apt search "app name"
+```
+```bash
 chmod 1777 -> Only owner can delete
 ```
 

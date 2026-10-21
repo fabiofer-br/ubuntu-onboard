@@ -2,9 +2,10 @@
 
 ## Creating a Bash Alias 
 
-If have sequence of just two commands that you want to fire off quickly (like updating the system), a script might be overkill. You can create an **alias** for it.
+If there is a sequence of just two commands that you want to fire off quickly (like updating the system), a script might be overkill. 
+You can create an _**alias**_ for it.
 
-An alias acts as a text replacement. When you type the alias, Bash instantly replaces it with the full command string before hitting Enter.
+An _**alias**_ acts as a text replacement: when you type the alias, Bash instantly replaces it with the full command string before hitting Enter.
 
 1. Open your user's Bash configuration file:
 ```bash
@@ -29,18 +30,21 @@ Now, typing `sys-update` will automatically run the full update sequence.
 
 ## Creating Shell Scripts
 
-In Linux, you don't need a specific file extension like `.bat` or `.bat`. Instead, the system looks at two things: a special first line of text inside the file (called the "shebang") and the file's execution permissions (using the `chmod` command).
+In Linux, you don't need a specific file extension like `.bat` or `.bat` to create a _**Shell Script**_. 
+Instead, the system looks at two things: a special first line of text inside the file (called _"the Shebang"_), and the file's execution permissions (using the `chmod` command).
 
 To make your script accessible from *anywhere* in your folder structure, you must save it inside a directory that is registered in your system's `$PATH`. The standard folder for custom, user-created commands is `/usr/local/bin`.
 
 1. **Create the file:** Use a text editor like nano.
-Decide on the word you want to type in the terminal to run your sequence. Let's call it `start-dev`. Open a new file in the global binaries folder:
+Decide on the word you want to type in the terminal to run your sequence. Let's call it `start-dev`. 
+Open a new file in the global binaries folder:
 ```bash
 sudo nano /usr/local/bin/start-dev
 ```
 
-2. **Add the Shebang and your commands:** Telling Linux what language to use.
-The very first line of your file MUST be `#!/bin/bash`. This tells the system to interpret the following lines using the Bash shell.
+2. **Add the Shebang and your commands:** Tell Linux what language to use.
+The very first line of your file MUST be `#!/bin/bash`. 
+This tells the system to interpret the following lines using the Bash shell.
 
 Add your sequence below it. For example:
 ```bash
@@ -61,7 +65,7 @@ echo "Environment ready!"
 ```
 *(To save and exit nano: Press `Ctrl+O`, `Enter`, then `Ctrl+X`)*
 
-3. **Make the file executable:** Applying the execute permission.
+3. **Make the file executable:** Apply the execute permission.
 By default, Linux creates text files as read/write only. You must explicitly tell the operating system that this text file is actually a program.
 ```bash
 sudo chmod +x /usr/local/bin/start-dev
@@ -117,6 +121,7 @@ exit
 ```
 
 A script cannot “return” the parent shell to the original user. `exit` only terminates the script or current shell; after the script finishes, your calling shell remains the original user automatically.
-<br/><br/>
+
+<br/>  <br/>
 
 ---
