@@ -7,7 +7,7 @@ Contents
 - [Basic setup](docs/Ubuntu2604-101-basic-setup.md): initial system updates, handy packages, GNOME tweaks, Chrome/VScode/Edge install, power and GRUB settings.
 - [Install Docker](docs/Ubuntu2604-102-install-docker.md): official Docker Engine installation, docker-compose plugin, post-install user setup and verification.
 - [Additional tools](docs/Ubuntu2604-103-additional-tools.md): recommended dev tools (DBeaver, uv, Zsh/Oh My Zsh, CopyQ) and workflow tips.
-- [SQL Server on Linux (Docker)](docs/Ubuntu2604-201-sql-server-linux.md): quick-start `docker run` examples, data persistence, permissions, and connection tips.
+- [SQL Server on Linux (Docker)](docs/Ubuntu2604-203-sql-server-linux.md): quick-start `docker run` examples, data persistence, permissions, and connection tips.
 - [Dotnet & C# on Linux](docs/Ubuntu2604-202-dotnet-and-csharp.md): install .NET SDK, VS Code integration, scaffold Web API, and connect to Docker-hosted SQL Server.
 
 Quick start
