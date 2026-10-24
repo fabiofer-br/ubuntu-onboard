@@ -1,15 +1,21 @@
 #!/bin/bash
-# Note: this script must be saved in /usr/local/bin/  
+
+# Note: this script must be saved in /usr/local/bin/
 
 if [ "$EUID" -ne 0 ]; then
-  echo "Please run as root"
+  echo "Please run with sudo (as root)."
   exit
 fi
 echo ""
 echo "Running updates..."
-
 apt update -y
+echo ""
+echo "Running upgrades..."
 apt upgrade -y
+echo ""
+echo ""
+echo "Just re-checking updates and upgrades..."
+echo ""
 apt update -y
 apt upgrade -y
 
@@ -19,6 +25,6 @@ echo "Starting containers..."
 echo "# docker start mssql2022"
 
 echo ""
-sudo -u "$SUDO_USER" -- fastfetch
-
-# sudo cp ~/git/ubuntu-onboard/xtras/update /usr/local/bin/update
+# sudo -u "$SUDO_USER" -- fastfetch
+# sudo cp ~/git/fabiofer-br/ubuntu-onboard/xtras/update /usr/local/bin/
+# sudo chmod +x /usr/local/bin/update
