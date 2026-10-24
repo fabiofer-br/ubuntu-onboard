@@ -13,6 +13,8 @@ Install Docker Engine and docker-compose using Ubuntu's official Docker reposito
 2. Install prerequisite packages
    ```bash
    sudo apt install -y util-linux-extra
+   ```
+   ```bash
    sudo apt install -y curl ca-certificates gnupg lsb-release
    ```
 
@@ -21,10 +23,9 @@ Install Docker Engine and docker-compose using Ubuntu's official Docker reposito
    ```bash
    sudo mkdir -p /etc/apt/keyrings
    ```
-4. Download and add Docker's GPG key to system keyring
+4. Download `Docker's GPG key` and add it to `system keyring`
    ```bash
    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker.gpg
-
    ```
 5. Add Docker's official repository to APT sources
    ```bash
@@ -45,6 +46,8 @@ Install Docker Engine and docker-compose using Ubuntu's official Docker reposito
 8. Start and enable Docker service
    ```bash
    sudo systemctl start docker
+   ```
+   ```bash
    sudo systemctl enable docker
    ```
 9. Create `docker` user group (safe to run even if it exists)
@@ -52,17 +55,18 @@ Install Docker Engine and docker-compose using Ubuntu's official Docker reposito
    sudo groupadd docker
    ```
 10. Add current user to `docker` group
-    ```bash
-    sudo usermod -aG docker $USER
-    ```
+   ```bash
+   sudo usermod -aG docker $USER
+   ```
 11. Apply new group membership (choose one method)
-    ```bash
-    # Option A: Use newgrp command (applies to current session only)
-    newgrp docker
-    
-    # Option B: Log out and log back in (applies permanently)
-    exit
-    ```
+   ```bash
+   # Option A: Use newgrp command (applies to current session only)
+   newgrp docker
+   ```
+   ```bash
+   # Option B: Log out and log back in (applies permanently)
+   exit
+   ```
 
 ### Phase 5: Verification
 12. Verify Docker installation
@@ -101,20 +105,29 @@ Install Docker Engine and docker-compose using Ubuntu's official Docker reposito
     https://docs.docker.com/get-started/
     ```
 
-## Key Details
+## Installation Complete - Key Details (what we did):
 - **Ubuntu version**: 26.04 LTS (from user profile)
 - **Installation method**: Official Docker repository (recommended, more secure than PPA)
 - **docker-compose**: Installing via `docker-compose-plugin` package (modern approach)
 - **User permissions**: Adding user to `docker` group for rootless command execution
 - **Service management**: systemd integration for auto-start capability
 
-## Verification Checklist
+## Verification Checklist - Use it to ensure you vrified everything
 - [ ] `docker --version` shows Docker version 24.x or later
 - [ ] `docker compose version` confirms compose is available
 - [ ] `docker run hello-world` executes without sudo errors
 - [ ] User can run docker commands without sudo prefix
 
-## Decisions & Scope
-- **Included**: Full Docker Engine + docker-compose (via plugin)
-- **Excluded**: Docker Desktop (vs Engine), rootless Docker mode (optional later), Docker in WSL
-- **Assumption**: User has sudo privileges (typical for development workstation)
+## Some docker commands used frequently
+
+```bash
+docker version       # Show the Docker version information
+
+docker info          # Display system-wide information (including configurations)
+
+docker ps            # Show running containers
+docker ps --all      # Show all containers
+
+docker start container-name   # Start an existing container. Accepts container-id too. 
+docker stop container-name    # Stop an existing container. Accepts container-id too. 
+```

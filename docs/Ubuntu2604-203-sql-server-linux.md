@@ -37,20 +37,30 @@ docker run -e "ACCEPT_EULA=Y" \
 
 ```bash
 docker container ps --all
+```
+```bash
 docker stop mssql2022
+```
+```bash
 docker start mssql2022
+```
+```bash
 docker image ls -all
+```
+```bash
 docker info
 ```
+
 ---
 
 ### Verifying and Connecting locally
 
 Once the container is running, you can connect directly to it from your development workstation using various tools:
 
+
 #### 1. Via VS Code (The Cleanest Workflow)
 
-Since you have your native `.deb` VS Code environment set up, you can connect straight from your editor:
+Since you have the native `.deb` VS Code environment set up, you can connect straight from your editor:
 
 1. Install the official **mssql** extension in VS Code.
 2. Click the **SQL Server** icon on the sidebar activity bar.
@@ -60,7 +70,6 @@ Since you have your native `.deb` VS Code environment set up, you can connect st
 * **Authentication Type**: `SQL Server Authentication`
 * **User name**: `sa`
 * **Password**: The strong password you defined in your `docker run` command.
-
 
 
 #### 2. Using Command-line Tools inside the Container
@@ -103,7 +112,6 @@ Your goal is to point that internal path to a safe, permanent folder on your dev
 #### 1. Create a safe folder on your host machine
 
 First, create a dedicated folder in your home directory where your databases will physically live.
-
 ```bash
 mkdir -p ~/projects/sql_data
 ```
