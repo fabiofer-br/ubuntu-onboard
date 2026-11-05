@@ -12,13 +12,14 @@ sudo apt install wget gpg
 sudo apt install net-tools
 ```
 ```bash
-sudo apt install gnome-tweaks
-```
-```bash
 sudo apt install exfat-fuse ntfs-3g
 ```
 ```bash
 sudo apt install fonts-cascadia-code
+```
+```bash
+# wsl: skip this one
+sudo apt install gnome-tweaks
 ```
 <br/>
 
