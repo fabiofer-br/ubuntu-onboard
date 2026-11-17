@@ -24,6 +24,17 @@ source ~/.bashrc
 ```
 
 Now, typing `sys-update` will automatically run the full update sequence.
+
+---
+
+### Some Examples of Commonly Used Aliases
+
+Show the current $PATH in a readable way:
+```bash
+alias path='printf "%s\n" "$PATH" | tr ":" "\n"'
+```
+
+As stated before, to keep these aliases for future Bash sessions, add the line to `~/.bashrc`, then run `source ~/.bashrc`.
 <br/><br/>
 
 ---
